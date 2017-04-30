@@ -11,13 +11,98 @@
   </head>
   <body ng-app="myApp">
     <div class="container" ng-controller="myCtrl">
+        <table class="table">
+          <tr>
+              <th>
+                ห้อง
+              </th>
+              <th>
+                ผู้เช่า
+              </th>
+              <th>
+                ค่าน้ำ
+              </th>
+              <th>
+                ค่าไฟ
+              </th>
+              <th>
+                รวม
+              </th>
+              <th>
+                เพิ่มเติม
+              </th>
+          </tr>
+              <tr ng-repeat="d in data">
+                <td> {{d.room}}
+                </td>
+                <td> {{d.renter}}
+                </td>
+                <td> 0
+                </td>
+                <td> 0
+                </td>
+                <td> 0
+                </td>
+                <td> <a ng-click="rentInfo($index)">คลิ๊ก</a>
+                </td>
+              </tr>
+        </table>
 
-    </div>
-    <div class="container" ng-controller="myCtrL2">
-
-    </div>
-    <div class="container" ng-controller="myCtrl3">
-
+        <div ng-show="showMoreInfo">
+        <h1>ข้อมูลห้องพัก {{selectedRoom}}</h1>
+           <div class="col col-md-6">
+            <p>น้ำประปา</p>
+                <table class="table">
+                  <tr>
+                      <th>
+                        ครั้งก่อน
+                      </th>
+                      <th>
+                        ครั้งหลัง
+                      </th>
+                      <th>
+                        รวม
+                      </th>
+                  </tr>
+                  <tr>
+                    
+                    <td> 0
+                    </td>
+                    <td> 0
+                    </td>
+                    <td> 0
+                    </td>
+                  </tr>
+                </table>
+            </div>
+        
+            <div class="col col-md-6">
+            <p>ค่าไฟฟ้า</p>
+                <table class="table">
+                  <tr>
+                      <th>
+                        ครั้งก่อน
+                      </th>
+                      <th>
+                        ครั้งหลัง
+                      </th>
+                      <th>
+                        รวม
+                      </th>
+                  </tr>
+                  <tr>
+                    
+                    <td> 0
+                    </td>
+                    <td> 0
+                    </td>
+                    <td> 0
+                    </td>
+                  </tr>
+                </table>
+            </div>
+        </div>
+              
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
