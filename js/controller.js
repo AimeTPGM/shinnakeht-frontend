@@ -1,7 +1,14 @@
 angular.module('myApp')
 
+.controller('renterForm', ['$scope', '$http', function($scope, $http){
+	
+	$scope.addRenter = function(){
+		console.log('add!')
+		console.log($scope.formData)
+	}
+}])
 
-.controller('myCtrl', ['$scope', '$http', function($scope, $http) {
+.controller('tableInfo', ['$scope', '$http', function($scope, $http) {
 	$scope.showMoreInfo = function(){
 		return false;
 	}
@@ -45,15 +52,15 @@ angular.module('myApp')
 			"renter" : "zzz",
 			"info" : [
 				{ "water" : [
-						{"previous" : "100" },
+						{"previous" : "300" },
 						{"now" : "100" },
-						{"total" : "0" }
+						{"total" : "200" }
 					] 
 				},
 				{ "ele" : [
-						{"previous" : "200" },
-						{"now" : "100" },
-						{"total" : "100" }
+						{"previous" : "2160" },
+						{"now" : "1300" },
+						{"total" : "0" }
 					] 
 				}
 			]
@@ -62,14 +69,14 @@ angular.module('myApp')
 			"renter" : "aaa",
 			"info" : [
 				{ "water" : [
-						{"previous" : "100" },
-						{"now" : "100" },
+						{"previous" : "1030" },
+						{"now" : "10230" },
 						{"total" : "0" }
 					] 
 				},
 				{ "ele" : [
-						{"previous" : "200" },
-						{"now" : "100" },
+						{"previous" : "2100" },
+						{"now" : "10540" },
 						{"total" : "100" }
 					] 
 				}
@@ -79,7 +86,7 @@ angular.module('myApp')
 	}
 	$scope.rentInfo = function(index){
 		var roomData = $scope.data[index];
-		$scope.selectedRoom = roomData.room;
+		$scope.selectedRoom = roomData;
 		console.log($scope.data[index]);
 		$scope.showMoreInfo = function(){
 			return true;
@@ -87,4 +94,4 @@ angular.module('myApp')
 	}
 
 
-}])
+}]);
