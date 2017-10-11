@@ -1,0 +1,28 @@
+.content-wrapper{
+	width: 90%;
+	margin: auto;
+}
+
+.header{
+	margin-top: 80px;
+    margin-bottom: 80px;
+    
+    text-align: center;
+}
+
+.header h1{
+	font-size: 3em;
+}
+
+.add-tenant-wrapper{
+	margin-bottom: 50px;
+}
+
+.all-tenant-table th:last-child{
+	text-align: center;
+}
+
+.all-tenant-table .info{
+	text-align: center;
+}
+

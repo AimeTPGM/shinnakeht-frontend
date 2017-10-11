@@ -1,0 +1,75 @@
+<div class="header">
+	<h1>รายละเอียดผู้เช่า</h1>
+</div>
+
+<div class="add-tenant-wrapper">
+	<div class="columns">
+		<div class="column">
+			<div class="control has-icons-left has-icons-right">
+		    <input class="input is-info" type="text" placeholder="ใส่หมายเลขห้อง" ng-model="newTenant.roomNumber">
+		    <span class="icon is-small is-left">
+		      <i class="fa fa-building"></i>
+		    </span>
+		  </div>
+		</div>
+		<div class="column">
+			<div class="control has-icons-left has-icons-right">
+		    <input class="input is-info" type="text" placeholder="ใส่ชื่อผู้เช่า" ng-model="newTenant.name">
+		    <span class="icon is-small is-left">
+		      <i class="fa fa-user"></i>
+		    </span>
+		  </div>
+		</div>
+		<div class="column">
+			<div class="control has-icons-left has-icons-right">
+		    <input class="input is-info" type="text" placeholder="ใส่เบอร์ติดต่อ" ng-model="newTenant.phone">
+		    <span class="icon is-small is-left">
+		      <i class="fa fa-phone"></i>
+		    </span>
+		  </div>
+		</div>
+		<div class="column">
+			<a class="button is-info is-fullwidth" ng-click="addTenant()">
+		    <span class="icon">
+		      <i class="fa fa-plus"></i>
+		    </span>
+		    <span>เพิ่มผู้เช่าใหม่</span>
+		  </a>
+		</div>
+	</div>
+</div>
+
+<div>
+	<table class="table is-striped is-fullwidth all-tenant-table">
+		<thead>
+			<th>หมายเลขห้อง</th>
+			<th>ผู้เช่า</th>
+			<th>เบอร์โทรศัพท์</th>
+			<th>สถานะการจ่ายเงิน</th>
+			<th>เพิ่มเติม</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="tenant in tenantsInfo | orderBy: '+roomNumber'">
+				<td>
+					{{tenant.roomNumber}}
+				</td>
+				<td>
+					{{tenant.name}}
+				</td>
+				<td>
+					{{tenant.phone}}
+				</td>
+				<td>
+					{{tenant.paymentStatus}}
+				</td>
+				<td class="info">
+					<a href="">
+						<span class="icon">
+				      <i class="fa fa-info"></i>
+				    </span>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
